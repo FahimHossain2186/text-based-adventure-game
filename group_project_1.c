@@ -154,6 +154,37 @@ void vanishing_portraits(){
     
 }
 
+void whispering_bookshelf(){
+    
+    printf("That whispering book glows with a riddle...\n");
+    printf("\nI have hands but never touch\n");
+    printf("I move around but stay in one place\n");
+    printf("I have numbers but I don't count\n");
+    printf("\n What am I?\n");
+    printf("1. A compass\n");
+    printf("2. A wall clock\n");
+    printf("3. A combination lock\n");
+    printf("4. A watch\n");
+
+    int choice = get_choice(4);
+
+    if (choice == 1) {
+        printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
+        game_over();
+        } 
+    else if (choice == 2) {
+        
+        } 
+    else if (choice == 3) {
+        printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
+        game_over();
+        }
+    else if (choice == 4) {
+        printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
+        game_over();
+        }
+}
+
 void credits() {
     printf("\n================== CREDITS ==================\n");
     printf("\n               TEAM {team_name}               \n");
