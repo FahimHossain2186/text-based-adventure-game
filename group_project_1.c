@@ -8,6 +8,8 @@ void game_over();
 void vanishing_portraits();
 void credits();
 void whispering_bookshelf();
+void book_riddle();
+void blood_stained_clock();
 
 int get_choice(int num_choices) {
     int choice;
@@ -155,7 +157,33 @@ void vanishing_portraits(){
 }
 
 void whispering_bookshelf(){
-    
+
+    printf("You step closer, inspecting the faded portraits\n");
+    printf("\nAs your eyes scan the details, you notice something strange—one of the names engraved below a painting is glowing faintly\n");
+    printf("When you whisper the name aloud, the wall shudders, revealing a hidden passage behind the paintings.\n");
+    printf("A narrow staircase spirals downward, leading to a dimly lit room. Inside, an ancient bookshelf lined with dusty tomes hums softly, whispering unintelligible words.\n");
+    printf("\n What step will you take?\n");
+    printf("1.Try to silence the whispers by closing the books.\n");
+    printf("2.Burn the bookshelf to destroy whatever is inside.\n");
+    printf("3.Carefully pull out the book that whispers your name.\n");
+
+    int choice = get_choice(3);
+
+    if (choice == 1) {
+        printf("As you slam the book shut, the pages wrap around you, pulling you into a cursed story, trapping you forever.\n");
+        game_over();
+        } 
+    else if (choice == 2) {
+        printf("As the flames consume the bookshelf, the room trembles, the laughter mocks, and the mansion swallows you whole, erasing all trace of your existence.\n");
+        game_over();
+        }
+        else if (choice == 3) {
+        book_riddle();
+        } 
+}
+
+void book_riddle(){
+
     printf("That whispering book glows with a riddle...\n");
     printf("\nI have hands but never touch\n");
     printf("I move around but stay in one place\n");
@@ -173,7 +201,7 @@ void whispering_bookshelf(){
         game_over();
         } 
     else if (choice == 2) {
-        
+        blood_stained_clock();
         } 
     else if (choice == 3) {
         printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
@@ -192,6 +220,7 @@ void credits() {
     printf("2511026642\tSamia Zaman\n");
     printf("2512244042\tRiazul Jannat\n");
     printf("2513009642\tSidratul Muntahara Audhira\n");
+    printf("2412032042\tMd. Lutful Alam\n");
     printf("\n=============================================\n");
     printf("\nPress ENTER to return to the main menu...\n");
 
