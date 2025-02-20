@@ -11,7 +11,8 @@ void whispering_bookshelf();
 void book_riddle();
 void blood_stained_clock();
 void silent_room();
-
+void echoing_hall();
+void hidden_doorway();
 
 int get_choice(int num_choices) {
     int choice;
@@ -259,7 +260,7 @@ void silent_room(){
         game_over();
         } 
     else if (choice == 2) {
-        
+        echoing_hall();
         }
     else if (choice == 3) {
         printf("A shadowy figure emerges from the darkness, mimicking your voice. It steps closer, and suddenly, everything goes black.\n");
@@ -277,9 +278,52 @@ void silent_room(){
             game_over();
         }
         else if (choice == 2){
-            
+            echoing_hall();
         }
         
+    }
+}
+
+void echoing_hall(){
+
+    printf("The walls stop moving, and the door slowly unlocks on its own. You notice a sequence of symbols glowing faintly. Tracing them with your fingers, a hidden mechanism clicks, and the iron door creaks open.As you step through the iron door, you find yourself in a vast hallway lined with flickering lanterns. The air feels heavier here, as if something unseen is watching. The floor is covered in a strange mist, and every step sends a faint echo that never quite fades away.\n");
+    printf("\nAt the far end of the hall stands a grand mirror, cracked down the center. Below it, an inscription reads:\n");
+    printf("\"To pass through, you must face your reflection. But beware—some reflections do not belong to you.\"\n");
+    printf("1.An antique key : tarnished but still intact.\n 2.A silver dagger : engraved with symbols similar to those on the walls.\n3.A small hourglass : sand trickling impossibly slow.\n");
+    printf("\n How will you wish to act?\n");
+    printf("1. Pick up the antique key and use it on the mirror\n");
+    printf("2. Take the silver dagger and strike the mirror \n");
+    printf("3. Flip the hourglass upside down \n");
+    printf("4. Walk past the mirror without touching anything \n");
+   
+    int choice = get_choice(4);
+
+    if (choice == 1) {
+        printf("The key vanishes, and the mirror starts to glow. You see yourself… but your reflection smiles when you do not. It reaches through the glass and pulls you inside.\n");
+        game_over();
+        } 
+    else if (choice == 2) {
+        hidden_doorway();
+        }
+    else if (choice == 3) {
+        printf("The mist swirls violently, and time around you slows. The mirror no longer shows your reflection, but a door appears behind you, slightly a jar\n");
+        printf("Will you enter it?\n");
+        printf("1. Step through the door\n");
+        printf("2. Ignore the door and wait\n");
+
+        int choice = get_choice(2);
+        
+        if (choice == 1){
+            hidden_doorway();
+        }
+        else if (choice == 2){
+            printf("The hour glass shatters, and shadows consume the hall.\n");
+            game_over();
+        }
+    }
+    else if (choice == 4) {
+        printf("A force yanks you backward, and the mist rises, suffocating you.\n");
+        game_over();
     }
 }
 
