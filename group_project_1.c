@@ -10,6 +10,8 @@ void credits();
 void whispering_bookshelf();
 void book_riddle();
 void blood_stained_clock();
+void silent_room();
+
 
 int get_choice(int num_choices) {
     int choice;
@@ -211,6 +213,74 @@ void book_riddle(){
         printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
         game_over();
         }
+}
+void blood_stained_clock(){
+
+    printf("The books glow dims, and the air around you shifts.\n");
+    printf("\nA faint ticking sound echoes as a blood-stained clock appears before you.Time does not move normally in this house\n");
+    printf("The clock is frozen at 3:33 AM\n");
+    printf(" A note says: \"Set me free at the witching hour.\"\n");
+    printf("\n What choice will you make?\n");
+    printf("1. Smash the clock\n");
+    printf("2. Walk away\n");
+    printf("3. Set it to midnight \n");
+
+    int choice = get_choice(3);
+
+    if (choice == 1) {
+        printf("The clock shatters into pieces, but the blood remains, seeping into the floor. Suddenly, the room begins to collapse.Crushed by the weight of time.\n");
+        game_over();
+        } 
+    else if (choice == 2) {
+        printf("Lost in timeless limbo.\n");
+        game_over();
+        }
+        else if (choice == 3) {
+        silent_room();
+        } 
+}
+
+void silent_room(){
+
+    printf("Something reacts to sound\n");
+    printf("\nThe passage leads to a dimly lit chamber with walls covered in ancient symbols. The air is heavy, and an eerie silence fills the space. A message is carved into the stone:\n");
+    printf("\"Make a sound, and you will be trapped forever.\"\n");
+    printf("A single wooden box sits in the center of the room, slightly open. The only exit is a rusted iron door with no visible handle.\n");
+    printf("\n Which path will you take?\n");
+    printf("1. Open the wooden box\n");
+    printf("2. Stay completely silent and examine the walls \n");
+    printf("3. Whisper a word to test the warning \n");
+    printf("4. Knock on the iron door \n");
+   
+    int choice = get_choice(4);
+
+    if (choice == 1) {
+        printf("A piercing scream erupts from within! The room shakes violently, and the door slams shut. You are now trapped forever.\n");
+        game_over();
+        } 
+    else if (choice == 2) {
+        
+        }
+    else if (choice == 3) {
+        printf("A shadowy figure emerges from the darkness, mimicking your voice. It steps closer, and suddenly, everything goes black.\n");
+        game_over();
+        } 
+    else if (choice == 4) {
+        printf("A deep groaning sound echoes through the room. The walls begin closing in, and the ceiling lowers. You must act quickly!\n");
+        printf("1. Try to push the door open\n");
+        printf("2. Remain silent and wait\n");
+
+        int choice = get_choice(2);
+        
+        if (choice == 1){
+            printf("It will not budge, and the room crushes you.\n");
+            game_over();
+        }
+        else if (choice == 2){
+            
+        }
+        
+    }
 }
 
 void credits() {
