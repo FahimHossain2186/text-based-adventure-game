@@ -13,6 +13,7 @@ void blood_stained_clock();
 void silent_room();
 void echoing_hall();
 void hidden_doorway();
+void vanishing_passage();
 
 int get_choice(int num_choices) {
     int choice;
@@ -215,6 +216,7 @@ void book_riddle(){
         game_over();
         }
 }
+
 void blood_stained_clock(){
 
     printf("The books glow dims, and the air around you shifts.\n");
@@ -326,6 +328,74 @@ void echoing_hall(){
         game_over();
     }
 }
+
+void hidden_doorway(){
+
+    printf("The mirror shatters, revealing a hidden doorway. You vanish into the unknown.\n");
+    printf("\nAs you step forward, the air grows colder, and the flickering candlelight reveals a faint outline on the stone wall a door, but one without a handle or keyhole. A soft hum resonates from the ground, as if the very foundation of the house is alive, waiting.\n");
+    printf("A rusted plaque is mounted beside the doorway, its inscription barely legible under the dust:\n");
+    printf("\"The door remains unseen, but not untouched. Reveal it with that which is lost.\"\n");
+    printf("At your feet, you notice three objects, each pulsing with a faint glow. Choosing the correct one may reveal the door, but choosing wrongly... may awaken something else\n");    
+    printf("\n How will you reveal the hidden doorway?\n");
+    printf("1. The Silver Locket \n");
+    printf("2. The Blood-Stained Key\n");
+    printf("3. The Empty Glass Bottle\n");
+   
+    int choice = get_choice(3);
+
+    if (choice == 1) {
+        printf("Engraved with a name you do not recognize\n");
+        printf("what to do?\n");
+        printf("1. Press the locket against the wall\n");
+        printf("2. Open the locket first\n");
+
+        int choice = get_choice(2);
+        
+        if (choice == 1){
+            printf("The locket vibrates, but nothing happens. The room darkens as the whispers return")
+            game_over();
+        }
+        else if (choice == 2){
+            printf("The hour glass shatters, and shadows consume the hall.\n");
+            vanishing_passage();
+        }
+        } 
+    else if (choice == 2) {
+        printf("Old and rusted, yet strangely warm to the touch\n");
+        printf("What to do?\n");
+        printf("1. Insert the key into the walls cracks.\n");
+        printf("2. Drop the key and walk away.\n");
+
+        int choice = get_choice(2);
+        
+        if (choice == 1){
+            printf("The wall shifts, revealing a passage but as you step through, the door vanishes behind you. ")
+            vanishing_passage();
+        }
+        else if (choice == 2){
+            printf(" A deep, guttural growl echoes through the room. Something has awakened.\n");
+            game_over();
+        }
+        }
+    else if (choice == 3) {
+        printf("Its inside coated with a faint red residue.\n");
+        printf("what to do?\n");
+        printf("1. Pour a drop of your own blood into the bottle.\n");
+        printf("2. Shatter the bottle against the door.\n");
+
+        int choice = get_choice(2);
+        
+        if (choice == 1){
+            printf("The liquid glows, forming words: What is given is never returned. The door slowly materializes.\n");
+            vanishing_passage();
+        }
+        else if (choice == 2){
+            printf("A violent gust of wind extinguishes all light. When the darkness fades, you are no longer in the same room.\n");
+            game_over();
+        }
+    }
+}
+
 
 void credits() {
     printf("\n================== CREDITS ==================\n");
