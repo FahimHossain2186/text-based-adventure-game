@@ -4,10 +4,10 @@
 
 void new_game();
 void abandoned_mansion();
-void game_over();
 void vanishing_portraits();
-void credits();
 void whispering_bookshelf();
+void credits();
+void game_over();
 
 int get_choice(int num_choices) {
     int choice;
@@ -152,6 +152,37 @@ void vanishing_portraits(){
         whispering_bookshelf();
         }
     
+}
+
+void whispering_bookshelf(){
+    
+    printf("That whispering book glows with a riddle...\n");
+    printf("\nI have hands but never touch\n");
+    printf("I move around but stay in one place\n");
+    printf("I have numbers but I don't count\n");
+    printf("\n What am I?\n");
+    printf("1. A compass\n");
+    printf("2. A wall clock\n");
+    printf("3. A combination lock\n");
+    printf("4. A watch\n");
+
+    int choice = get_choice(4);
+
+    if (choice == 1) {
+        printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
+        game_over();
+        } 
+    else if (choice == 2) {
+        
+        } 
+    else if (choice == 3) {
+        printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
+        game_over();
+        }
+    else if (choice == 4) {
+        printf("Since you gave the wrong answer, the book will burn you with an intense light.\n");
+        game_over();
+        }
 }
 
 void credits() {
