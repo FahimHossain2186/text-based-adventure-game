@@ -51,7 +51,7 @@ void map(){
     printf("|  ROOM    |     CHAMBER     |                            |    CHAMBER     |     PASSAGE    |\n");
     printf("|          |                 |                            |                |                |\n");
     printf("|          |                 |                            |                |                |\n");
-    printf("------------------------------                            -----------------------------------\n");
+    printf("------------------------------                            ----------------------------------|\n");
 }
 
 int get_choice(int num_choices) {
@@ -119,34 +119,38 @@ void new_game(){
 }
 
 int main(void){
-    while (1) {  // Keeps the program running until the user chooses to exit
-        printf("Welcome to {Game Name}");
-        printf("\n1. NEW GAME");
-        printf("\n2. CREDITS");
-        printf("\n3. EXIT");
+    printf("Welcome to {Game Name}");
+    printf("\n1. NEW GAME");
+    printf("\n2. CREDITS");
+    printf("\n3. EXIT");
 
-        int choice = get_choice(3);
+    int choice = get_choice(3);
 
-        if (choice == 1) {
-            new_game();
+    // New game loop
+    if (choice == 1) {
+        new_game();
         } 
-        else if (choice == 2) {
-            credits();
-        } 
-        else if (choice == 3) {
-            printf("\nAre you sure you want to exit?");
-            printf("\n 1. Yes :(  2. No :D");
+    // Credits Loop
+    else if (choice == 2) {
+        credits();
+        }
+    // Exit Loop
+    else if (choice == 3) {
 
-            int exit_choice = get_choice(2);
+        printf("\nAre you sure you want to exit?");
+        printf("\n 1. Yes :(  2. No :D");
 
+        int exit_choice = get_choice(2);
+        
             if (exit_choice == 1){
                 printf("Exiting the Game.....");
                 exit(0);
             }
             else if (exit_choice == 2){
-                continue;  // Go back to the main menu
+                //Restart to Main Menu
+                printf("\n");
+                main();
             }
-        }
     }
     return 0;
 }
