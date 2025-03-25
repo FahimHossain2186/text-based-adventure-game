@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <conio.h>
 
+void saveVault(int n);
+void save(int sceneNo);
+void menu(int sceneNo);
+void map();
+int get_choice(int num_choices, int sceneNo);
 void new_game();
 void abandoned_mansion();
 void game_over();
@@ -16,8 +21,61 @@ void echoing_hall();
 void hidden_doorway();
 void vanishing_passage();
 
-void menu(){
-    //
+void saveVault(int n){
+
+    switch (n)
+    {
+    case 1:         /* code */              break;
+    
+    default:                                break;
+    }
+}
+
+void save(int sceneNo){
+
+    FILE *file = fopen("load.txt", "w");
+
+    if (file == NULL) {
+        printf("Error saving file!\n");
+        return;
+    }
+
+    fprintf(file, "&d", sceneNo);
+    fclose(file);
+    printf("Saved Successfully!!\n");
+    menu(sceneNo);
+}
+
+void load(){
+
+    FILE *file = fopen("load.txt", "r");
+
+    if (file == NULL) {
+        printf("Error loading file!\n");
+        return;
+    }
+
+    int sceneNo;
+
+    fscanf(file, "%d", &sceneNo);
+
+    fclose(file);
+
+    saveVault(sceneNo);
+}
+
+void menu(int sceneNo){
+    
+    int choice;
+
+    scanf("%d", &choice);
+
+    switch (choice)
+    {
+    case 1:         save(sceneNo);          break;
+    case 2:         main();                 break;
+    default:        saveVault(sceneNo);     break;
+    }
 }
 
 void map(){
@@ -54,7 +112,7 @@ void map(){
     printf("------------------------------                            ----------------------------------|\n");
 }
 
-int get_choice(int num_choices) {
+int get_choice(int num_choices, int sceneNo) {
     
     int choice;
     char input;
@@ -65,7 +123,7 @@ int get_choice(int num_choices) {
         input = getch(); 
 
         if (input == 27) {  // ESC key
-            menu();
+            menu(sceneNo);
         }
         else if (input == 'm' || input == 'M') {
             map();
