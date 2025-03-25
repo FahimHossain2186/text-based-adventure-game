@@ -25,7 +25,7 @@ void saveVault(int n){
 
     switch (n)
     {
-    case 1:         /* code */              break;
+    case 1:/* function call for that scene */break;
     
     default:                                break;
     }
@@ -40,7 +40,7 @@ void save(int sceneNo){
         return;
     }
 
-    fprintf(file, "&d", sceneNo);
+    fprintf(file, "%d", sceneNo);
     fclose(file);
     printf("Saved Successfully!!\n");
     menu(sceneNo);
