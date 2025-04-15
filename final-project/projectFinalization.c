@@ -122,18 +122,22 @@ int main(void){
     while (1) {  // Keeps the program running until the user chooses to exit
         printf("Welcome to {Game Name}");
         printf("\n1. NEW GAME");
-        printf("\n2. CREDITS");
-        printf("\n3. EXIT");
+        printf("\n2. LOAD GAME");
+        printf("\n3. CREDITS");
+        printf("\n4. EXIT");
 
         int choice = get_choice(3);
 
         if (choice == 1) {
             new_game();
-        } 
+        }
         else if (choice == 2) {
-            credits();
+            load();
         } 
         else if (choice == 3) {
+            credits();
+        } 
+        else if (choice == 4) {
             printf("\nAre you sure you want to exit?");
             printf("\n 1. Yes :(  2. No :D");
 
@@ -149,4 +153,34 @@ int main(void){
         }
     }
     return 0;
+}
+
+void credits() {
+    printf("\n================== CREDITS ==================\n");
+    printf("\n              TEAM CRYPTIC CODEX             \n");
+    printf("\n2512847642\tMd. Fahim Hossain\n");
+    printf("2511026642\tSamia Zaman\n");
+    printf("2513009642\tSidratul Muntahara Audhira\n");
+    printf("2412032042\tMd. Lutful Alam\n");
+    printf("\n=============================================\n");
+    printf("\nPress ENTER to return to the main menu...\n");
+
+    // ENTER to be back to MAIN MENU
+    getchar(); 
+    while (getchar() != '\n');
+
+    main();
+}
+
+void game_over(){
+
+    printf("Game Over.\n");
+    printf("Press ENTER to return to the main menu...\n");
+
+    // ENTER to be back to MAIN MENU
+    getchar(); 
+    while (getchar() != '\n');
+
+    main();
+
 }

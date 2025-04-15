@@ -7,7 +7,7 @@ void saveVault(int n);
 void save(int sceneNo);
 void menu(int sceneNo);
 void map();
-int get_choice(int num_choices, int sceneNo);
+int  get_choice(int num_choices, int sceneNo);
 void new_game();
 void abandoned_mansion();
 void game_over();
@@ -25,9 +25,19 @@ void saveVault(int n){
 
     switch (n)
     {
-    case 1:/* function call for that scene */break;
+    case 1:         new_game();                     break;
+    case 2:         abandoned_mansion();            break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
+    case 1:         new_game();                     break;
     
-    default:                                break;
+    default:                                        break;
     }
 }
 
@@ -141,6 +151,36 @@ int get_choice(int num_choices, int sceneNo) {
     }
 }
 
+void abandoned_mansion(){
+    
+    printf("As you step inside, the heavy wooden door creaks shut behind you… by itself.\n");
+    printf("The door slams shut. You walk through the corridor, stepping over broken furniture and scattered papers.\n");
+    printf("\nSamia halts to take a closer look at the clutter. She discovers an ID card belonging to a reporter who once investigated this house. A shiver runs through you—someone had come here before, but they hadn't escaped. Suddenly, you hear a strange noise coming from upstairs.\n");
+    printf("\nWhat will you do?\n");
+    printf("1. Ignore the sound and look for an exit.\n");
+    printf("2. Investigate the noise upstairs.\n");
+    printf("3. Try breaking a window to escape.\n");
+    printf("4. Split up and search the house for another way out\n");
+
+    int choice = get_choice(4, 2);
+
+    if (choice == 1) {
+        printf("The house traps you as shadows close in—one by one, you vanish into darkness.\n");
+        game_over();
+        } 
+    else if (choice == 2) {
+        vanishing_portraits();
+        } 
+    else if (choice == 3) {
+        printf("As the glass shatters, a deafening shriek echoes, and the shards hurtle back at you, plunging you into darkness.\n");
+        game_over();
+        }
+    else if (choice == 4) {
+        printf("Splitting up sealed your fate, as the mansion's maze twists, trapping each of you in its shifting corridors, until you vanish, never to reunite.\n");
+        game_over();
+        }
+}
+
 void new_game(){
 
     // Story Prologue
@@ -161,7 +201,7 @@ void new_game(){
     printf("3. We knock on the door and wait for the response.\n");
 
     // Conditional Pathways
-    int choice = get_choice(3);
+    int choice = get_choice(3, 1);
 
     if (choice == 1) {
         abandoned_mansion();
@@ -177,38 +217,68 @@ void new_game(){
 }
 
 int main(void){
-    printf("Welcome to {Game Name}");
-    printf("\n1. NEW GAME");
-    printf("\n2. CREDITS");
-    printf("\n3. EXIT");
+    while (1) {  // Keeps the program running until the user chooses to exit
+        printf("Welcome to {Game Name}");
+        printf("\n1. NEW GAME");
+        printf("\n2. LOAD GAME");
+        printf("\n3. CREDITS");
+        printf("\n4. EXIT");
 
-    int choice = get_choice(3);
+        int choice = get_choice(3, 0);
 
-    // New game loop
-    if (choice == 1) {
-        new_game();
-        } 
-    // Credits Loop
-    else if (choice == 2) {
-        credits();
+        if (choice == 1) {
+            new_game();
         }
-    // Exit Loop
-    else if (choice == 3) {
+        else if (choice == 2) {
+            load();
+        } 
+        else if (choice == 3) {
+            credits();
+        } 
+        else if (choice == 4) {
+            printf("\nAre you sure you want to exit?");
+            printf("\n 1. Yes :(  2. No :D");
 
-        printf("\nAre you sure you want to exit?");
-        printf("\n 1. Yes :(  2. No :D");
+            int exit_choice = get_choice(2, 0);
 
-        int exit_choice = get_choice(2);
-        
             if (exit_choice == 1){
                 printf("Exiting the Game.....");
                 exit(0);
             }
             else if (exit_choice == 2){
-                //Restart to Main Menu
-                printf("\n");
-                main();
+                continue;  // Go back to the main menu
             }
+        }
     }
     return 0;
+}
+
+void credits() {
+    printf("\n================== CREDITS ==================\n");
+    printf("\n              TEAM CRYPTIC CODEX             \n");
+    printf("\n2512847642\tMd. Fahim Hossain\n");
+    printf("2511026642\tSamia Zaman\n");
+    printf("2513009642\tSidratul Muntahara Audhira\n");
+    printf("2412032042\tMd. Lutful Alam\n");
+    printf("\n=============================================\n");
+    printf("\nPress ENTER to return to the main menu...\n");
+
+    // ENTER to be back to MAIN MENU
+    getchar(); 
+    while (getchar() != '\n');
+
+    main();
+}
+
+void game_over(){
+
+    printf("Game Over.\n");
+    printf("Press ENTER to return to the main menu...\n");
+
+    // ENTER to be back to MAIN MENU
+    getchar(); 
+    while (getchar() != '\n');
+
+    main();
+
 }
