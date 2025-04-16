@@ -168,7 +168,7 @@ void new_game() {
     printf("Audhira: \"I don't think this is a good idea. Should we really be doing this?\"\n");
     printf("Lutful: \"Oh, stop acting like a child! Rumors aren't always false. That's what makes this fun. Let's go!\"\n");
     printf("Fahim: \"I think we should at least explore a little. Whatever happens, we'll deal with it.\"\n");
-    printf("Samia: \"I'm with Audhira on this one—it feels risky. But if we're going, let's stick together and be careful, okay?\"\n");
+    printf("Samia: \"I'm with Audhira on this oneï¿½it feels risky. But if we're going, let's stick together and be careful, okay?\"\n");
 
     printf("\nAfter hours of walking, you spot a massive, overgrown mansion hidden among the trees.\n");
     printf("\nWhat will you do?\n");
@@ -719,15 +719,18 @@ void game_over() {
 }
 
 void credits() {
-    printf("\n=== CREDITS ===\n");
-    printf("Shadows of the Forsaken: The Unrecorded Adventure\n");
-    printf("Created by:\n");
-    printf("- Fahim\n");
-    printf("- Samia\n");
-    printf("- Audhira\n");
-    printf("- Lutful\n");
-    printf("\nPress ENTER to return...\n");
-    getchar(); getchar();
+    printf("\n================== CREDITS ==================\n");
+    printf("\n              TEAM CRYPTIC CODEX             \n");
+    printf("\n2512847642\tMd. Fahim Hossain\n");
+    printf("2511026642\tSamia Zaman\n");
+    printf("2513009642\tSidratul Muntahara Audhira\n");
+    printf("2412032042\tMd. Lutful Alam\n");
+    printf("\n=============================================\n");
+    printf("\nPress ENTER any key to return to the main menu...\n");
+    
+    getchar(); 
+    getchar();
+
     main();
 }
 
@@ -739,6 +742,7 @@ int main() {
         printf("3. CREDITS\n");
         printf("4. EXIT\n");
 
+        printf("Enter your choice: ");
         int choice;
         scanf("%d", &choice);
 
