@@ -99,7 +99,7 @@ void menu(int sceneNo) {
 
 void map(){
 
-    printf("---------------------------------------------------------------------------------------------\n");
+    printf("\n---------------------------------------------------------------------------------------------\n");
     printf("|                       |                                          |                        |\n");
     printf("|                       |                                          |        CHAMBER OF      |\n");
     printf("|                       |                                          |          ECHOES        |\n");
@@ -727,8 +727,8 @@ void credits() {
     printf("2412032042\tMd. Lutful Alam\n");
     printf("\n=============================================\n");
     printf("\nPress ENTER any key to return to the main menu...\n");
-    
-    getchar(); 
+
+    getchar();
     getchar();
 
     main();
