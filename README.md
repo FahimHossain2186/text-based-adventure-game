@@ -19,10 +19,8 @@ GROUP_PROJECT/
 ├── .git
 ├── .vscode
 ├── final-project/ # Finalized game files 
-│ ├── find02.c / find02.exe # final version of the game
-│ ├── projectFinalization.c # Main game logic 
-│ ├── project-finalization.c # Earlier version of final game 
-│ ├── project-finalization.exe # Executable (compiled) 
+│ ├── find02.c /  # final version of the game
+│ ├── find02.exe # Executable (compiled) 
 │ ├── save.txt / load.txt # Save system files 
 │ ├── ticTakToe.c / .exe # Bonus mini-game 
 ├── map/ # Game mapping assets 
